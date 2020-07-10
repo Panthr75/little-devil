@@ -14,6 +14,20 @@ ___
     - (Transfers 500 moneys to Bob. That is, of course, if you have enough money)
   - **Note**: You may not use this command if economy is disabled, or it won't work if the person you are requesting to give money to could not be found, you are transfering money to the bots, or yourself, or you didn't enter a positive non-zero integer of money.
 - Added one extra gif for Slap Command
+- Transfer command now allows entering money amounts with the symbol in front and/or currency name behind it
+- Fixed `doTransaction` function to update the guild's user data instead of the website's user data
+- Changed how currency works. Changed from being stored as a `string` to being stored as an `object`. You now have the ability to customize the symbol of server currency, as well as the name of it, and the plural name of it:
+```js
+// OLD
+"currency": "Dollars"
+
+// NEW
+"currency": {
+    "name": "Dollar",
+    "pluralName": "Dollars",
+    "symbol": "$"
+}
+```
 ___
 ### 0.22.1 Alpha
 - Fixed Daily Command Streaks (Hopefully)
