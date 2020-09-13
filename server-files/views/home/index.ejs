@@ -1,0 +1,16 @@
+<!--<img id="neko-img">
+<script>
+/** @type {HTMLImageElement} */
+let img = document.getElementById("neko-img");
+async function test(endpoint) {
+    let req = await fetch("https://nekos.life/api/v2" + endpoint, {
+        method: "GET"
+    });
+
+    let json = await req.json();
+
+    img.src = json.url;
+}
+test("/img/erokemo");
+</script>
+-->

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%- title %></title>
+    <link rel="stylesheet" href="/resources/style.css">
+</head>
+<body>
+    <div class="nav">
+        <span class="title">Little Devil</span>
+        <% if (user === undefined) { %>
+            <span class="pages">
+                <a href="/login">Login</a>
+            </span>
+        <% } else { %>
+            <span class="pages logged-in">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/logout">Logout</a>
+                <a class="username"><%= user.username %></a>
+                <img class="profile" draggable="false" src="<%- user.avatarURL %>">
+            </span>
+        <% } %>
+    </div>
+    <div class="page-content">
+        <%- include(path) %>
+    </div>
+</body>
+</html>

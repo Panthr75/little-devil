@@ -1,0 +1,13 @@
+{
+    "bot": [
+        {
+            "message": "Added changelog",
+            "timestamp": 1600036777457
+        }, 
+        {
+            "message": "Added daily command",
+            "timestamp": 1599991082567
+        }
+    ],
+    "server": []
+}

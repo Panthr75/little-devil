@@ -1,0 +1,30 @@
+<div class="content">
+    <div class="dashboard-list">
+        <% for (let index = 0, length = guilds.length; index < length; index++) { %>
+            <% let guild = guilds[index] %>
+            <% if (guild.managable) { %>
+                <div class="dashboard-item" id="guild-<%- guild.id %>" type="<%- guild.type %>">
+                    <div class="card">
+                        <% if (guild.image === undefined) { %>
+                            <div class="guild-icon"><span>?</span></div>
+                        <% } else { %>
+                            <img class="guild-icon" draggable="false" src="<%- guild.image %>">
+                        <% } %>
+                        <span class="title"><%= guild.name %></span>
+                    </div>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+</div>
+
+<script>
+let dashboardItems = document.getElementsByClassName("dashboard-item");
+function clickFn(ev) {
+    let guildID = this.id.replace(/^guild-/, "");
+    window.location = window.location.pathname + (window.location.pathname.endsWith("/") ? "" : "/") + guildID;
+}
+for (let dashboardItem of dashboardItems) {
+    dashboardItem.addEventListener("click", clickFn);
+}
+</script>

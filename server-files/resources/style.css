@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Questrial&family=Varela+Round&display=swap');
+
+
+body {
+    background-color: #333333;
+    margin: 0;
+    padding: 0;
+
+    --nav-height: 75px;
+    --push-content: 10px;
+}
+
+.nav {
+    color: white;
+    background-color: #151515;
+    height: var(--nav-height);
+    font-family: 'Varela Round', sans-serif;
+    --padding: 20px;
+
+    display: grid;
+    grid-template-columns: calc(25% - var(--padding)) calc(75% - var(--padding));
+    padding-left: var(--padding);
+    align-items: center;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.nav > .title {
+    font-family: 'Alata', sans-serif;
+    justify-self: left;
+    font-size: 26px;
+    color: hsl(336, 100%, 70%);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.nav > .pages {
+    justify-self: right;
+
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.nav > .pages.logged-in {
+    grid-template-columns: auto auto auto 28px;
+    gap: 20px;
+}
+
+.nav > .pages.logged-in > .username {
+    color: #BBB;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav > .pages.logged-in > .profile {
+    width: 28px;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.nav > .pages > a {
+    color: #808080;
+    text-decoration: underline;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.nav > .pages > a:hover {
+    color: #CCC;
+}
+
+.page-content {
+    margin-top: calc(var(--nav-height) + var(--push-content));
+}
+
+.dashboard-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px;
+}
+
+.dashboard-item {
+    --bg-color: #888;
+    --hover-color: #aaa;
+    background-color: var(--bg-color);
+    width: 250px;
+    box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+
+    transition: background-color 200ms;
+    cursor: pointer;
+}
+
+.dashboard-item:hover {
+    background-color: var(--hover-color);
+}
+
+.dashboard-item > .card {
+    --padding: 10px;
+
+    display: grid;
+    grid-template-columns: calc(30% - var(--padding)) calc(70% - var(--padding));
+    align-items: center;
+    height: 64px;
+    padding-left: var(--padding);
+}
+
+.dashboard-item > .card > .guild-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #36393f;
+    color: white;
+    font-family: 'Questrial', sans-serif;
+    font-size: 2em;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.dashboard-item > .card > .title {
+    justify-self: center;
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    align-self: center;
+}
+
+.dashboard-item[type="not-joined"] {
+    --bg-color: #222;
+    color: white;
+    --hover-color: #444;
+}
+
+.dashboard-item[type="premium"] {
+    --bg-color: hsl(30, 50%, 53%);
+    --hover-color: hsl(30, 50%, 67%);
+}
+
+.dashboard-item[type="partnered"] {
+    --bg-color: hsl(90, 50%, 67%);
+    --hover-color: hsl(90, 50%, 80%);
+}
+
+.dashboard-item[type="support-server"] {
+    --bg-color: hsl(336, 50%, 67%);
+    --hover-color: hsl(336, 50%, 77%);
+}
+
+.content {
+    padding: 20px;
+}
